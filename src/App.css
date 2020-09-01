@@ -7,30 +7,9 @@
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
 }
-.header {
-  grid-area: h;
-  background-color: rgb(29, 205, 29);
-}
-.header img {
-  width: 50px;
-}
-.nav {
-  grid-area: n;
-  background-color: green;
-  
-}
 .ul {
   list-style-type: none;
   color: white;
   /* padding: 1;
   margin: 0; */
-}
-.main-content {
-  grid-area: c;
-  /* padding: 1; */
-  background-color: rgb(150, 230, 150);
-}
-.main-content img {
-  width: 90%;
-  
 }

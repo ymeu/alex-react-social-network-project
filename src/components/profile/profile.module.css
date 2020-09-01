@@ -1,0 +1,12 @@
+.mainContent {
+  grid-area: c;
+  /* padding: 1; */
+  background-color: rgb(150, 230, 150);
+}
+.myPhoto {
+  width: 90%; 
+}
+.item {
+  margin: 10px;
+  color: darkgreen;
+}
