@@ -13,3 +13,8 @@
   /* padding: 1;
   margin: 0; */
 }
+.app-wrapper-content {
+  grid-area: c;
+  /* padding: 1; */
+  background-color: rgb(150, 230, 150);
+}

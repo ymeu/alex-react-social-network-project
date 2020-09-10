@@ -1,9 +1,14 @@
 
-.item {
+.postsBlock {
   margin: 10px;
   color: darkgreen;
 }
-.myPosts {
-  color: black;
-  font-size: large;
-}
+
+/* .posts {
+  margin-top: 10px;
+} */
+
+
+/* .textarea {
+  margin-top: 10px;
+} */
