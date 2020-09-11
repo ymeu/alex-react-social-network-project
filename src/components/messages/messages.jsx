@@ -17,7 +17,7 @@ const Messages = (props) => {
     let messages = [
         { id: '1', message: 'Hey, how are you?' },
         { id: '2', message: 'Are you coming today?' },
-        { id: '3', message: 'Can you send me the documents we talked about pls? I will need them tomorrow' },
+        { id: '3', message: 'Can you send me the documents we talked about pls? I will need them tomorrow' }
     ];
 
     let dialogsElements = dialogs.map(
