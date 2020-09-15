@@ -5,12 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import state from './redux/state'
 
- 
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App state = {state} />
-    {/* <App posts = {posts} dialogs = {dialogs} messages = {messages} /> */}
+    <BrowserRouter>
+      <App state={state} />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
