@@ -5,7 +5,8 @@ let state = {
         posts: [
             { id: '1', post: 'Hey! How are you?', likesCount: '59' },
             { id: '2', post: 'Hey, it is my first post!', likesCount: '11' }
-        ]
+        ],
+        newPostText: 'type your comment'
     },
     messagesPage: {
         dialogs: [
@@ -19,7 +20,8 @@ let state = {
             { id: '1', message: 'Hey, how are you?' },
             { id: '2', message: 'Are you coming today?' },
             { id: '3', message: 'Can you send me the documents we talked about pls? I will need them tomorrow' }
-        ]
+        ],
+        newMessageText: 'type your message'
     },
     navbar: {
         friends: [
@@ -30,14 +32,35 @@ let state = {
     }
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 3,
-        post: postMessage,
+        post: state.profilePage.newPostText,
         likesCount: 0
     }
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
     rerenderEntireTree(state);
 }
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let addMessage = (newText) => {
+ let newMessage = {
+     id: 4, 
+     message: state.messagesPage.newMessageText
+ }
+ state.messagesPage.messages.push(newMessage);
+ state.messagesPage.newMessageText = '';
+ rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.messagesPage.newMessageText = newText;
+    rerenderEntireTree(state);
+} 
 
 export default state;
