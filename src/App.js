@@ -23,11 +23,9 @@ const App = (props) => {
           dispatch={props.dispatch}
           newPostText={props.state.profilePage.newPostText} />} />
         <Route path='/messages' render={() => <Messages
-          dialogs={props.state.messagesPage.dialogs}
-          messages={props.state.messagesPage.messages}
-          addMessage={props.addMessage}
-          newMessageText={props.state.messagesPage.newMessageText}
-          updateNewMessageText={props.updateNewMessageText} />} />
+          state={props.state.messagesPage}
+          dispatch={props.dispatch} 
+          store={props.store} />} />
         <Route path='/news' render={() => <News />} />
         <Route path='/music' render={() => <Music />} />
         <Route path='/settings' render={() => <Settings />} />
