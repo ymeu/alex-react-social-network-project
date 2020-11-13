@@ -2,25 +2,21 @@ import React from 'react';
 import classes from './messages.module.css';
 import DialogItem from './dialogItem/dialogItem';
 import MessageItem from './message/messageItem';
-import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/messagesReducer';
+
 
 
 const Messages = (props) => {
 
-    let state = props.store.getState().messagesPage;
-
-    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
-    let messageElements = state.messages.map(m => <MessageItem message={m.message} />);
-    let newMessageBody = state.newMessageBody;
+    let dialogsElements = props.messagesPage.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
+    let messageElements = props.messagesPage.messages.map(m => <MessageItem message={m.message} />);
     
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator());
+        props.sendMessage();
     }
 
     let onMessageChange = (e) => {
         let body = e.target.value;
-        debugger;
-        props.store.dispatch(updateNewMessageBodyCreator(body)); 
+        props.updateNewMessageBody(body); 
     }
 
     return (
@@ -31,7 +27,7 @@ const Messages = (props) => {
             <div className={classes.messages}>
                 {messageElements}
                 <div><textarea  
-                    value={newMessageBody} 
+                    value={props.newMessageBody} 
                     onChange={onMessageChange} 
                     placeholder='Enter your message'
                     className={classes.textarea}></textarea>
