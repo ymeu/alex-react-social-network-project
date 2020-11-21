@@ -13,15 +13,15 @@ import Friends from './components/friends/friends';
 // import store from './redux/reduxStore';
 import MessagesContainer from './components/messages/messagesContainer';
 
-const App = (props) => {
+const App = () => {
 
   return (
     <div className='app-wrapper'>
       <Header />
-      <Navbar friends={props.state.navbar.friends} />
+      <Navbar />
       <div className='app-wrapper-content'>
-        <Route path='/profile' render={() => <Profile store={props.store} />} />
-        <Route path='/messages' render={() => <MessagesContainer store={props.store} />} />
+        <Route path='/profile' render={() => <Profile />} />
+        <Route path='/messages' render={() => <MessagesContainer />} />
         <Route path='/news' render={() => <News />} />
         <Route path='/music' render={() => <Music />} />
         <Route path='/settings' render={() => <Settings />} />
