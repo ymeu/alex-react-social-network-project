@@ -7,9 +7,10 @@ import MessageItem from './message/messageItem';
 
 const Messages = (props) => {
 
-    let dialogsElements = props.messagesPage.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
-    let messageElements = props.messagesPage.messages.map(m => <MessageItem message={m.message} />);
-    
+    let dialogsElements = props.messagesPage.dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id} />);
+    let messageElements = props.messagesPage.messages.map(m => <MessageItem message={m.message} key={m.id} />);
+    let newMessageBody = props.messagesPage.newMessageBody;
+
     let onSendMessageClick = () => {
         props.sendMessage();
     }
@@ -27,7 +28,7 @@ const Messages = (props) => {
             <div className={classes.messages}>
                 {messageElements}
                 <div><textarea  
-                    value={props.newMessageBody} 
+                    value={newMessageBody} 
                     onChange={onMessageChange} 
                     placeholder='Enter your message'
                     className={classes.textarea}></textarea>
