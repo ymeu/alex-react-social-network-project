@@ -1,8 +1,26 @@
 
+.profilePage {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+}
+.subtitle {
+  font-weight: bold;
+  margin-top: 10px;
+}
 .backgroundPhoto {
-  width: 90%; 
+  width: 100%; 
+  height: 120px;
+}
+.profilePhoto {
+ margin-top: 3px;
+ margin-left: 5px;
 }
 .descriptionBlock {
   margin: 10px;
   color: darkgreen;
+}
+.name {
+  font-size: x-large;
+  font-weight: bold;
+  color: black;
 }

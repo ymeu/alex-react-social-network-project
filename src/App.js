@@ -1,16 +1,15 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/header';
 import Navbar from './components/navbar/navbar';
-import Profile from './components/profile/profile';
 import News from './components/news/news';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Music from './components/music/music';
 import Settings from './components/settings/settings';
 import Friends from './components/friends/friends';
 import MessagesContainer from './components/messages/messagesContainer';
 import UsersContainer from './components/users/usersContainer';
+import ProfileContainer from './components/profile/profileContainer';
 
 const App = () => {
 
@@ -19,7 +18,7 @@ const App = () => {
       <Header />
       <Navbar />
       <div className='app-wrapper-content'>
-        <Route path='/profile' render={() => <Profile />} />
+        <Route path='/profile' render={() => <ProfileContainer />} />
         <Route path='/messages' render={() => <MessagesContainer />} />
         <Route path='/news' render={() => <News />} />
         <Route path='/music' render={() => <Music />} />
