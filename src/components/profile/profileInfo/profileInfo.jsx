@@ -47,7 +47,7 @@ const ProfileInfo = (props) => {
             <div>{props.profile.contacts.youtube}</div>
             <div>{props.profile.contacts.github}</div>
             <div>{props.profile.contacts.mainLink}</div>
-          </div>
+          </div> 
         </div>
       </div>
     </div>
