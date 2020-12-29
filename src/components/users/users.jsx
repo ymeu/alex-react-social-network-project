@@ -2,11 +2,10 @@ import React from 'react';
 import classes from './users.module.css';
 import userPhoto from '../../assets/images/user.png';
 import { NavLink } from 'react-router-dom';
-import Axios from 'axios';
+import { usersAPI } from '../../api/api';
 
 
 const Users = (props) => {
-
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
 
@@ -32,27 +31,23 @@ const Users = (props) => {
                             </div>
                             <div>
                                 {u.isFollowed
-                                    ? <button onClick={() => { 
-                                        Axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                            withCredentials: true,
-                                            headers: {'API-KEY': 'f435f5f1-d0aa-4821-9e0c-6d8e13f8c1f3'}
-                                        })
-                                            .then(response => {
-                                                if (response.data.resultCode === 0) {
-                                                    props.unfollow(u.id);
-                                                }
-                                            });
-                                     }} className={classes.button} >Unfollow</button>
-                                    : <button onClick={() => {
-                                        Axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                            withCredentials: true,
-                                            headers: {'API-KEY': 'f435f5f1-d0aa-4821-9e0c-6d8e13f8c1f3'}
-                                        })
-                                            .then(response => {
-                                                if (response.data.resultCode === 0) {
-                                                    props.follow(u.id);
-                                                }
-                                            });
+                                    ? <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
+                                        props.disableFollowButton(true, u.id);
+                                        usersAPI.unfollow(u.id).then(data => {
+                                            if (data.resultCode === 0) {
+                                                props.unfollow(u.id);
+                                            }
+                                            props.disableFollowButton(false, u.id);
+                                        });
+                                    }} className={classes.button} >Unfollow</button>
+                                    : <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
+                                        props.disableFollowButton(true, u.id);
+                                        usersAPI.follow(u.id).then(data => {
+                                            if (data.resultCode === 0) {
+                                                props.follow(u.id);
+                                            }
+                                            props.disableFollowButton(false, u.id);
+                                        });
                                     }} className={classes.button} >Follow</button>}
                             </div>
                         </span>
