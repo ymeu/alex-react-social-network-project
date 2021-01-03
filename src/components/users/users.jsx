@@ -32,23 +32,9 @@ const Users = (props) => {
                             <div>
                                 {u.isFollowed
                                     ? <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
-                                        props.disableFollowButton(true, u.id);
-                                        usersAPI.unfollow(u.id).then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.unfollow(u.id);
-                                            }
-                                            props.disableFollowButton(false, u.id);
-                                        });
-                                    }} className={classes.button} >Unfollow</button>
+                                        props.unfollow(u.id) }} className={classes.button} >Unfollow</button>
                                     : <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
-                                        props.disableFollowButton(true, u.id);
-                                        usersAPI.follow(u.id).then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.follow(u.id);
-                                            }
-                                            props.disableFollowButton(false, u.id);
-                                        });
-                                    }} className={classes.button} >Follow</button>}
+                                        props.follow(u.id) }} className={classes.button} >Follow</button>}
                             </div>
                         </span>
                         <span>

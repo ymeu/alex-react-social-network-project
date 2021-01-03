@@ -16,16 +16,24 @@ export const usersAPI = {
         });
             
     },
-    follow (id) {
-        return instance.post(`follow/${id}`, {})
+    follow (userID) {
+        return instance.post(`follow/${userID}`, {})
         .then(response => {
             return response.data 
         });
     },
-    unfollow (id) {
-        return instance.delete(`follow/${id}`)
+    unfollow (userID) {
+        return instance.delete(`follow/${userID}`)
         .then(response => {
             return response.data 
+        });
+    },
+    getUserProfile (userID) {
+        return Axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userID)
+    },
+    setAuthData () {
+        return instance.get(`auth/me`).then(response => {
+            return response.data
         });
     }
 
