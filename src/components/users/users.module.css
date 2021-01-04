@@ -1,14 +1,19 @@
 
 .userPhoto {
     width: 10%;
+    margin: 5px;
 }
 .name {
     font-weight: 600;
     font-size: large;
+    margin-left: 5px;
 }
 .selectedPage {
     font-weight: bold;
 }
 .button {
     margin: 5px;
+}
+.userInfo {
+    margin-left: 5px;
 }

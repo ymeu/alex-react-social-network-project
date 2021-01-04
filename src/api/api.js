@@ -28,13 +28,18 @@ export const usersAPI = {
             return response.data 
         });
     },
-    getUserProfile (userID) {
-        return Axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userID)
-    },
-    setAuthData () {
+    getProfile (userID) {
+        return instance.get(`profile/` + userID);
+    }
+}
+
+export const authAPI = {
+    me () {
         return instance.get(`auth/me`).then(response => {
             return response.data
         });
     }
-
 }
+    
+
+

@@ -42,12 +42,12 @@ const Users = (props) => {
                                 <NavLink to={'/profile/' + u.id}>
                                     <div className={classes.name}>{u.name}</div>
                                 </NavLink>
-                                <div>{u.status}</div>
+                                <div className={classes.userInfo}>{u.status}</div>
                             </span>
 
                             <span>
-                                <div>{'u.location.city'}</div>
-                                <div>{'u.location.country'}</div>
+                                <div className={classes.userInfo}>{'u.location.city'}</div>
+                                <div className={classes.userInfo}>{'u.location.country'}</div>
                             </span>
                         </span>
                     </div>

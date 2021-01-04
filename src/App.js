@@ -10,6 +10,7 @@ import MessagesContainer from './components/messages/messagesContainer';
 import UsersContainer from './components/users/usersContainer';
 import ProfileContainer from './components/profile/profileContainer';
 import HeaderContainer from './components/header/headerContainer';
+import LoginPage from './components/login/login';
 
 const App = () => {
 
@@ -23,8 +24,9 @@ const App = () => {
         <Route path='/news' render={() => <News />} />
         <Route path='/music' render={() => <Music />} />
         <Route path='/settings' render={() => <Settings />} />
-        <Route path='/Friends' render={() => <Friends />} />
-        <Route path='/Users' render={() => <UsersContainer />} />
+        <Route path='/friends' render={() => <Friends />} />
+        <Route path='/users' render={() => <UsersContainer />} />
+        <Route path='/login' render={() => <LoginPage />} />
       </div>
     </div>
   );
