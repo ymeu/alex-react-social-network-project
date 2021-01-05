@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './profileInfo.module.css';
 import Preloader from '../../common/preloader/preloader';
+import ProfileStatus from './profileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -17,9 +18,9 @@ const ProfileInfo = (props) => {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <img className={classes.backgroundPhoto} src="https://dfla.org/wp-content/uploads/2018/12/Dark-Red-background-banner.jpg"></img>
-      </div>
+      </div> */}
       <div className={classes.profilePage}>
         <div className={classes.profilePhoto}>
           <img src={props.profile.photos.large} />
@@ -28,6 +29,7 @@ const ProfileInfo = (props) => {
           <div className={classes.name}>
             {props.profile.fullName}
           </div>
+          <ProfileStatus status='I am so excited about learning React' />
           <div>
             <div className={classes.subtitle}> {props.profile.aboutMe ? <div>About me</div> : null} </div>
             {props.profile.aboutMe}
