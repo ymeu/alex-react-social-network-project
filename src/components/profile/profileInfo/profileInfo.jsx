@@ -29,7 +29,7 @@ const ProfileInfo = (props) => {
           <div className={classes.name}>
             {props.profile.fullName}
           </div>
-          <ProfileStatus status='I am so excited about learning React' />
+          <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
           <div>
             <div className={classes.subtitle}> {props.profile.aboutMe ? <div>About me</div> : null} </div>
             {props.profile.aboutMe}
@@ -39,7 +39,7 @@ const ProfileInfo = (props) => {
             {props.profile.lookingForAJob === true ? <div>{props.profile.lookingForAJobDescription}</div> : null}
           </div>
           <div>
-            <div className={classes.subtitle}> My contacts</div> 
+            <div className={classes.subtitle}>My contacts</div> 
             
             <div>{props.profile.contacts.facebook}</div>
             <div>{props.profile.contacts.website}</div>
