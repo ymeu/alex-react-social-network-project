@@ -1,50 +1,51 @@
 import Axios from 'axios';
 
 
-const instance = Axios.create({ 
+
+const instance = Axios.create({
     withCredentials: true,
     baseURL: `https://social-network.samuraijs.com/api/1.0/`,
-    headers: {'API-KEY': 'f435f5f1-d0aa-4821-9e0c-6d8e13f8c1f3'}
-    
+    headers: { 'API-KEY': 'f435f5f1-d0aa-4821-9e0c-6d8e13f8c1f3' }
+
 })
 
 export const usersAPI = {
-    getUsers (currentPage = 1, pageSize = 10) {
+    getUsers(currentPage = 1, pageSize = 10) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
-        .then(response => {
-            return response.data 
-        });
-            
+            .then(response => {
+                return response.data
+            });
+
     },
-    follow (userID) {
+    follow(userID) {
         return instance.post(`follow/${userID}`, {})
-        .then(response => {
-            return response.data 
-        });
+            .then(response => {
+                return response.data
+            });
     },
-    unfollow (userID) {
+    unfollow(userID) {
         return instance.delete(`follow/${userID}`)
-        .then(response => {
-            return response.data 
-        });
+            .then(response => {
+                return response.data
+            });
     },
-    getProfile (userID) {
+    getProfile(userID) {
         console.warn('Obsolete method. Please use profileAPI object')
         return profileAPI.getProfile(userID);
     }
 }
 
 export const profileAPI = {
-    getProfile (userID) {
+    getProfile(userID) {
         return instance.get(`profile/` + userID);
     },
     setStatus(userID) {
         return instance.get(`/profile/status/${userID}`)
     },
     updateStatus(status) {
-        return instance.put(`/profile/status`, {status: status})
+        return instance.put(`/profile/status`, { status: status })
     }
-    
+
 }
 
 export const authAPI = {
@@ -52,8 +53,16 @@ export const authAPI = {
         return instance.get(`auth/me`).then(response => {
             return response.data
         });
+    },
+    login(email, password, rememberMe, captcha) {
+        return instance.post(`/auth/login`, {
+            email: email,
+            password: password,
+            rememberMe: rememberMe,
+            captcha: captcha
+        })
     }
 }
-    
+
 
 

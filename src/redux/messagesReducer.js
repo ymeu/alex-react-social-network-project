@@ -13,25 +13,18 @@ let initialState = {
         { id: '1', message: 'Hey, how are you?' },
         { id: '2', message: 'Are you coming today?' },
         { id: '3', message: 'Can you send me the documents we talked about pls? I will need them tomorrow' }
-    ],
-    newMessageBody: ''
+    ]
 };
 
 
 const messagesReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_TEXT:
-            return {    
-                ...state,
-                newMessageBody: action.body
-            }
         case SEND_MESSAGE: 
-            let newMessage = state.newMessageBody;    
+            let newMessage = action.newMessageBody;    
             return {
                 ...state,
                 messages: [...state.messages, {id: 4, message: newMessage}],
-                newMessageBody: ''
             }
         default:
             return state; 
@@ -40,8 +33,6 @@ const messagesReducer = (state = initialState, action) => {
 
 
 
-export const sendMessageCreator = () => ({ type: SEND_MESSAGE })
-export const updateNewMessageBodyCreator = (body) => 
-    ({ type: UPDATE_NEW_MESSAGE_TEXT, body: body })
+export const sendMessageCreator = (newMessageBody) => ({ type: SEND_MESSAGE, newMessageBody })
 
 export default messagesReducer;
