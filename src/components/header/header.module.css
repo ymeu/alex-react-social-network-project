@@ -13,3 +13,10 @@
 .loginBlock a {
   color: darkred;
 }
+.username {
+  font-weight: bold;  
+  font-size: large;
+}
+.logoutButton {
+  color: darkred;
+}
