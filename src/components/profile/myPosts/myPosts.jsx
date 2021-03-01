@@ -9,7 +9,9 @@ let maxLength10 = maxLengthCreator(10);
 
 const MyPosts = (props) => {
 
-  let postsElement = props.posts.map(
+  console.log('render');
+
+  let postsElement = [...props.posts].reverse().map(
     p => <Post message={p.post} likes={p.likesCount} key={p.id} />
   );
 

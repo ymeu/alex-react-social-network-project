@@ -9,7 +9,7 @@ const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const DISABLE_FOLLOW_BUTTON = 'DISABLE_FOLLOW_BUTTON';
 
 let initialState = {
-    users: [ ],
+    users: [],
     pageSize: 100,
     totalUsersCount: 0,
     currentPage: 1,
@@ -23,29 +23,29 @@ const usersReducer = (state = initialState, action) => {
         case FOLLOWED:
             return {
                 ...state,
-                users: state.users.map (u => {
+                users: state.users.map(u => {
                     if (u.id === action.userID) {
-                        return {...u, isFollowed: true}
+                        return { ...u, isFollowed: true }
                     }
                     return u;
-                })       
-            }    
-        
-       case UNFOLLOWED:
+                })
+            }
+
+        case UNFOLLOWED:
             return {
                 ...state,
-                users: state.users.map (u => {
+                users: state.users.map(u => {
                     if (u.id === action.userID) {
-                        return {...u, isFollowed: false}
+                        return { ...u, isFollowed: false }
                     }
                     return u;
-                })       
-            }   
+                })
+            }
         case SET_USERS:
             return {
                 ...state,
                 users: action.users
-            }    
+            }
         case SET_CURRENT_PAGE:
             return {
                 ...state,
@@ -64,55 +64,52 @@ const usersReducer = (state = initialState, action) => {
         case DISABLE_FOLLOW_BUTTON:
             return {
                 ...state,
-                followButtonDisabled: action.isDisabled 
-                ? [...state.followButtonDisabled, action.userID]
-                : state.followButtonDisabled.filter(id => id != action.userID) 
+                followButtonDisabled: action.isDisabled
+                    ? [...state.followButtonDisabled, action.userID]
+                    : state.followButtonDisabled.filter(id => id != action.userID)
             }
         default:
-            return state; 
+            return state;
     }
 }
 
 export const followSuccess = (userID) => ({ type: FOLLOWED, userID })
 export const unfollowSuccess = (userID) => ({ type: UNFOLLOWED, userID })
-export const setUsers= (users) => ({ type: SET_USERS, users })
+export const setUsers = (users) => ({ type: SET_USERS, users })
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
 export const setTotalUsersCount = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count: totalUsersCount })
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 export const disableFollowButton = (isDisabled, userID) => ({ type: DISABLE_FOLLOW_BUTTON, isDisabled, userID })
 
 export const requestUsers = (page, pageSize) => {
-    return (dispatch) => {
-        dispatch(toggleIsFetching (true));      
-        usersAPI.getUsers(page, pageSize).then(data => {  
-            dispatch(toggleIsFetching (false));        
-            dispatch(setUsers(data.items));
-            dispatch(setTotalUsersCount(data.totalCount));
-            })
+    return async (dispatch) => {
+        dispatch(toggleIsFetching(true));
+
+        let data = await usersAPI.getUsers(page, pageSize);
+        dispatch(toggleIsFetching(false));
+        dispatch(setUsers(data.items));
+        dispatch(setTotalUsersCount(data.totalCount));
     }
-} 
+}
+
+const followUnfollowFlow = async (dispatch, userID, apiMethod, actionCreator) => {
+    dispatch(disableFollowButton(true, userID));
+    let data = await apiMethod(userID);
+    if (data.resultCode === 0) {
+        dispatch(actionCreator(userID));
+    }
+    dispatch(disableFollowButton(false, userID));
+}
 
 export const follow = (userID) => {
-    return (dispatch) => {
-        dispatch(disableFollowButton(true, userID));
-        usersAPI.follow(userID).then(data => {
-            if (data.resultCode === 0) {
-                dispatch(followSuccess(userID));
-            }
-            dispatch(disableFollowButton(false, userID));
-        });
+    return async (dispatch) => {
+        followUnfollowFlow(dispatch, userID, usersAPI.follow.bind(usersAPI), followSuccess);
     }
 }
 
 export const unfollow = (userID) => {
-    return (dispatch) => {
-        dispatch(disableFollowButton(true, userID));
-        usersAPI.unfollow(userID).then(data => {
-            if (data.resultCode === 0) {
-                dispatch(unfollowSuccess(userID));
-            }
-            dispatch(disableFollowButton(false, userID));
-        });
+    return async (dispatch) => {
+        followUnfollowFlow(dispatch, userID, usersAPI.unfollow.bind(usersAPI), unfollowSuccess);
     }
 }
 

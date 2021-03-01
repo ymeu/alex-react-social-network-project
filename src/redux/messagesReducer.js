@@ -1,5 +1,7 @@
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+import { actionTypes } from 'redux-form';
+
 const SEND_MESSAGE = 'SEND_MESSAGE';
+const DELETE_MESSAGE = 'DELETE_MESSAGE';
 
 let initialState = {
     dialogs: [
@@ -26,6 +28,8 @@ const messagesReducer = (state = initialState, action) => {
                 ...state,
                 messages: [...state.messages, {id: 4, message: newMessage}],
             }
+        case DELETE_MESSAGE:   
+            return { ...state, messages: state.messages.filter(m => m.id != action.messageID) }
         default:
             return state; 
     }
@@ -34,5 +38,7 @@ const messagesReducer = (state = initialState, action) => {
 
 
 export const sendMessageCreator = (newMessageBody) => ({ type: SEND_MESSAGE, newMessageBody })
+export const deleteMessage = (messageID) => ({ type: DELETE_MESSAGE, messageID })
+
 
 export default messagesReducer;

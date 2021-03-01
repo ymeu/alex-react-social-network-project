@@ -37,16 +37,6 @@ class UsersContainer extends React.Component {
 
 }
 
-// let mapStateToProps = (state) => {
-//     return {
-//         users: state.usersPage.users,
-//         pageSize: state.usersPage.pageSize,
-//         totalUsersCount: state.usersPage.totalUsersCount,
-//         currentPage: state.usersPage.currentPage,
-//         isFetching: state.usersPage.isFetching,
-//         followButtonDisabled: state.usersPage.followButtonDisabled
-//     }
-// }
 let mapStateToProps = (state) => {
     return {
         users: getUsers(state),
@@ -57,7 +47,6 @@ let mapStateToProps = (state) => {
         followButtonDisabled: getFollowButtonDisabled(state)
     }
 }
-
 
 export default connect (mapStateToProps, 
     {follow, unfollow, setCurrentPage, disableFollowButton, requestUsers})(UsersContainer);

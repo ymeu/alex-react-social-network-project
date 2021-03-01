@@ -22,7 +22,7 @@ const LoginForm = (props) => {
             </div>
             <div>
                 <Field name={'rememberMe'} component={Input} 
-                type={'checkbox'} />Remember me
+                type={'checkbox'} /> Remember me
             </div>
             <div>
                 <button type='submit'>Login</button>

@@ -15,7 +15,6 @@ export const usersAPI = {
             .then(response => {
                 return response.data
             });
-
     },
     follow(userID) {
         return instance.post(`follow/${userID}`, {})
@@ -50,9 +49,7 @@ export const profileAPI = {
 
 export const authAPI = {
     me() {
-        return instance.get(`auth/me`).then(response => {
-            return response.data
-        });
+        return instance.get(`auth/me`)
     },
     login(email, password, rememberMe = false) {
         return instance.post(`/auth/login`, {
