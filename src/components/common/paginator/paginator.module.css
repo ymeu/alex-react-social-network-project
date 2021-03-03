@@ -1,3 +1,48 @@
+.paginator {
+    display: flex;
+    position: relative;
+    margin: 10px;
+    
+}
+
+.pages {
+  display: flex;
+  padding-left: 43px;
+  
+}
+
+.prevBtn {
+    position: absolute;
+    left: -4px;
+}
+
+.paginButtons {
+    text-align: center;
+    font-size: 15px;
+    display: inline-block;
+    background-color:floralwhite;
+    border: none;
+    color: darkgreen;
+    height: 25px;
+    border-radius: 3px;
+    margin-left: 2px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    
+}
+
+.pageNumber {
+    padding: 2px;
+    margin-left: 60px;
+    width: 10px;
+    border-radius: 3px;
+    background-color: darkgreen;
+    color: floralwhite;
+    min-width: 28px;
+    margin: 0 2px 0 2px;
+    display: block;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
 .selectedPage {
     font-weight: bold;
+    color: white;
 }

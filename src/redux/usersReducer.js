@@ -10,11 +10,11 @@ const DISABLE_FOLLOW_BUTTON = 'DISABLE_FOLLOW_BUTTON';
 
 let initialState = {
     users: [],
-    pageSize: 100,
+    pageSize: 50,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: false,
-    followButtonDisabled: []
+    followButtonDisabled: [],
 };
 
 const usersReducer = (state = initialState, action) => {
