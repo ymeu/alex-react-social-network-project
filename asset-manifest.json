@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/alex-react-social-network-project/static/css/main.f6bf3243.chunk.css",
-    "main.js": "/alex-react-social-network-project/static/js/main.74f2e4e8.chunk.js",
-    "main.js.map": "/alex-react-social-network-project/static/js/main.74f2e4e8.chunk.js.map",
-    "runtime-main.js": "/alex-react-social-network-project/static/js/runtime-main.680e85fe.js",
-    "runtime-main.js.map": "/alex-react-social-network-project/static/js/runtime-main.680e85fe.js.map",
-    "static/js/2.f445fdb2.chunk.js": "/alex-react-social-network-project/static/js/2.f445fdb2.chunk.js",
-    "static/js/2.f445fdb2.chunk.js.map": "/alex-react-social-network-project/static/js/2.f445fdb2.chunk.js.map",
+    "main.js": "/alex-react-social-network-project/static/js/main.2a74a518.chunk.js",
+    "main.js.map": "/alex-react-social-network-project/static/js/main.2a74a518.chunk.js.map",
+    "runtime-main.js": "/alex-react-social-network-project/static/js/runtime-main.4336a0ec.js",
+    "runtime-main.js.map": "/alex-react-social-network-project/static/js/runtime-main.4336a0ec.js.map",
+    "static/js/2.89201788.chunk.js": "/alex-react-social-network-project/static/js/2.89201788.chunk.js",
+    "static/js/2.89201788.chunk.js.map": "/alex-react-social-network-project/static/js/2.89201788.chunk.js.map",
     "static/css/3.f125a315.chunk.css": "/alex-react-social-network-project/static/css/3.f125a315.chunk.css",
     "static/js/3.13207674.chunk.js": "/alex-react-social-network-project/static/js/3.13207674.chunk.js",
     "static/js/3.13207674.chunk.js.map": "/alex-react-social-network-project/static/js/3.13207674.chunk.js.map",
     "static/css/4.8acadde2.chunk.css": "/alex-react-social-network-project/static/css/4.8acadde2.chunk.css",
-    "static/js/4.17180b6f.chunk.js": "/alex-react-social-network-project/static/js/4.17180b6f.chunk.js",
-    "static/js/4.17180b6f.chunk.js.map": "/alex-react-social-network-project/static/js/4.17180b6f.chunk.js.map",
+    "static/js/4.509a8314.chunk.js": "/alex-react-social-network-project/static/js/4.509a8314.chunk.js",
+    "static/js/4.509a8314.chunk.js.map": "/alex-react-social-network-project/static/js/4.509a8314.chunk.js.map",
     "index.html": "/alex-react-social-network-project/index.html",
-    "precache-manifest.33bf5384df1f9bcb2b3c9ccbfb15e7f1.js": "/alex-react-social-network-project/precache-manifest.33bf5384df1f9bcb2b3c9ccbfb15e7f1.js",
+    "precache-manifest.f850075c8e87dc32abffc6fa36798aba.js": "/alex-react-social-network-project/precache-manifest.f850075c8e87dc32abffc6fa36798aba.js",
     "service-worker.js": "/alex-react-social-network-project/service-worker.js",
     "static/css/3.f125a315.chunk.css.map": "/alex-react-social-network-project/static/css/3.f125a315.chunk.css.map",
     "static/css/4.8acadde2.chunk.css.map": "/alex-react-social-network-project/static/css/4.8acadde2.chunk.css.map",
     "static/css/main.f6bf3243.chunk.css.map": "/alex-react-social-network-project/static/css/main.f6bf3243.chunk.css.map",
-    "static/js/2.f445fdb2.chunk.js.LICENSE.txt": "/alex-react-social-network-project/static/js/2.f445fdb2.chunk.js.LICENSE.txt",
+    "static/js/2.89201788.chunk.js.LICENSE.txt": "/alex-react-social-network-project/static/js/2.89201788.chunk.js.LICENSE.txt",
     "static/media/preloader.svg": "/alex-react-social-network-project/static/media/preloader.7c1aab97.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.680e85fe.js",
-    "static/js/2.f445fdb2.chunk.js",
+    "static/js/runtime-main.4336a0ec.js",
+    "static/js/2.89201788.chunk.js",
     "static/css/main.f6bf3243.chunk.css",
-    "static/js/main.74f2e4e8.chunk.js"
+    "static/js/main.2a74a518.chunk.js"
   ]
 }
