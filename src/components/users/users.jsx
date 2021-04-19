@@ -7,38 +7,31 @@ import Paginator from '../common/paginator/paginator';
 const Users = (props) => {
     return (
         <div>
-            <Paginator {...props}/>
+            <Paginator {...props} />
             {props.users.map(u =>
-                <div key={u.id}>
+                <div key={u.id} className={classes.userProfileContainer}>
                     <span>
-                        <div>
-                            <NavLink to={'/profile/' + u.id}>
-                                <img src={u.photos.small != null ? u.photos.small : userPhoto} className={classes.userPhoto} />
-                            </NavLink>
-                        </div>
-                        <div>
-                            {u.isFollowed
-                                ? <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
-                                    props.unfollow(u.id)
-                                }} className={classes.button} >Unfollow</button>
-                                : <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
-                                    props.follow(u.id)
-                                }} className={classes.button} >Follow</button>}
-                        </div>
+                        <NavLink to={'/profile/' + u.id}>
+                            <img src={u.photos.small != null ? u.photos.small : userPhoto} className={classes.userPhoto} />
+                        </NavLink>
                     </span>
-                    <span>
-                        <span>
-                            <NavLink to={'/profile/' + u.id}>
-                                <div className={classes.name}>{u.name}</div>
-                            </NavLink>
-                            <div className={classes.userInfo}>{u.status}</div>
-                        </span>
-
-                        <span>
+                    <span className={classes.description}>
+                        <NavLink to={'/profile/' + u.id} className={classes.name}>{u.name}</NavLink>
+                        <div className={classes.userInfo}>{u.status}</div>
+                    </span>
+                    <span className={classes.followButton}>
+                        {u.isFollowed
+                            ? <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
+                                props.unfollow(u.id)
+                            }} className={classes.button} >Unfollow</button>
+                            : <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
+                                props.follow(u.id)
+                            }} className={classes.button} >Follow</button>}
+                    </span>
+                    {/* <span>
                             <div className={classes.userInfo}>{'u.location.city'}</div>
                             <div className={classes.userInfo}>{'u.location.country'}</div>
-                        </span>
-                    </span>
+                        </span> */}
                 </div>
             )}
         </div>

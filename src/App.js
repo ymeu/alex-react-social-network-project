@@ -16,7 +16,7 @@ import { connect, Provider } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './components/common/preloader/preloader';
 import store from './redux/reduxStore';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { withSuspense } from './components/HOC/withSuspense';
 
 const MessagesContainer = React.lazy(() => import('./components/messages/messagesContainer'));
@@ -61,11 +61,11 @@ const AppContainer = compose(withRouter(connect(mapStateToProps, { initialiseApp
 
 const SocialNetworkApp = (props) => {
   return (
-    <BrowserRouter>
+    <HashRouter >
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>)
+    </HashRouter>)
 }
 
 

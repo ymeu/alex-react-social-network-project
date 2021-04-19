@@ -3,14 +3,28 @@
     width: 10%;
     margin: 5px;
 }
+.description {
+    position: absolute;
+    margin-left: 5px;
+}
 .name {
     font-weight: 600;
     font-size: large;
-    margin-left: 5px;
 }
+
+.followButton {
+    position: absolute;
+    left: 1060px;
+}
+
 .button {
     margin: 5px;
 }
 .userInfo {
-    margin-left: 5px;
+    margin-top: 25px;
+}
+
+.userProfileContainer {
+    margin-left: 50px;
+    margin-top: 20px;
 }
