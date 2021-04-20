@@ -15,7 +15,7 @@ const LoginForm = (props) => {
             </div>
             <div>
                 <Field name={'password'}
-                type='password' 
+                type={'password'} 
                 validate={required}
                 placeholder={'Password'} 
                 component={Input} />
@@ -24,9 +24,19 @@ const LoginForm = (props) => {
                 <Field name={'rememberMe'} component={Input} 
                 type={'checkbox'} /> Remember me
             </div>
+            { props.captchaUrl && <img src={props.captchaUrl} /> }
+            { props.captchaUrl &&
+                <div>
+                    <Field name={'captcha'}
+                    type={'captcha'}
+                    validate={required}
+                    placeholder={'Enter the symbols'} 
+                    component={Input} />
+                </div>}
             <div>
                 <button type='submit'>Login</button>
             </div>
+            
             { props.error && <div className={classes.loginFormError}>
                 {props.error}
             </div>
