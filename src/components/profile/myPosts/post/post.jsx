@@ -1,11 +1,14 @@
 import React from 'react';
 import classes from './post.module.css';
+import { NavLink } from 'react-router-dom';
 
 const Post = (props) => {
   return (
     <div className={`${classes.item} ${classes.post}`}>
-      <img className = {classes.ava} src = 'https://tmssl.akamaized.net/images/portrait/originals/255450-1567785905.png'/> 
-      {props.message}
+      <NavLink to={'/profile/:userId?'}>
+        <img className = {classes.ava} src = {props.profilePhoto}/> 
+      </NavLink>
+      <p>{props.message}</p>  
       <div className = {classes.likesCounter}>{props.likes} Likes</div>
     </div>
   );

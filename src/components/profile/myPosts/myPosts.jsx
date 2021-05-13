@@ -5,14 +5,13 @@ import { Field, reduxForm } from 'redux-form';
 import { required, maxLengthCreator } from '../../../utilities/validators/validators';
 import { Textarea } from '../../common/formsControls/formsControls';
 
-let maxLength10 = maxLengthCreator(10);
+
+let maxLength30 = maxLengthCreator(30);
 
 const MyPosts = (props) => {
 
-  console.log('render');
-
   let postsElement = [...props.posts].reverse().map(
-    p => <Post message={p.post} likes={p.likesCount} key={p.id} />
+    p => <Post profilePhoto={props.profilePhoto} message={p.post} likes={p.likesCount} key={p.id} />
   );
 
   let onAddPost = (values) => {
@@ -38,7 +37,7 @@ const AddNewPostForm = (props) => {
       <Field
         name='newPostText'
         component={Textarea}
-        validate={[required, maxLength10]}
+        validate={[required, maxLength30]}
         className={classes.textarea}
         placeholder='Enter your post' />
       <div>

@@ -11,8 +11,11 @@ const SAVE_PROFILE_SUCCESS = 'SAVE_PROFILE_SUCCESS';
 
 let initialState = {
     posts: [
-        { id: '1', post: 'Hey! How are you?', likesCount: '59' },
-        { id: '2', post: 'Hey, it is my first post!', likesCount: '11' }
+        { id: '1', post: 'If you press the edit page button you can change the profile data and the profile image', likesCount: '11' },
+        { id: '2', post: 'You can change your status by a double click on the status', likesCount: '2' },
+        { id: '3', post: 'The textarea has a validation, so can`t add an empty post or a post containing more than 30 symbols', likesCount: '8' },
+        { id: '4', post: 'The like button, delete post button and posts by other users are coming soon', likesCount: '5' },
+        { id: '5', post: 'Hey, you can add posts here!', likesCount: '3' }
     ],
     profile: null,
     status: null

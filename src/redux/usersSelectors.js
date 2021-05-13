@@ -26,4 +26,6 @@ export const getIsFetching = (state) => {
 export const getFollowButtonDisabled = (state) => {
     return state.usersPage.followButtonDisabled
 }
-        
+export const getIsAuth = (state) => {
+    return state.auth.isAuth
+}

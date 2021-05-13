@@ -1,10 +1,25 @@
 import React from 'react';
 import classes from './users.module.css';
 import userPhoto from '../../assets/images/user.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import Paginator from '../common/paginator/paginator';
+import Preloader from '../common/preloader/preloader';
 
 const Users = (props) => {
+
+    if (props.isFetching) {
+        return <Preloader />
+    }
+
+    // let followUnfollowRedirect = (u) => {
+    //     if (props.isAuth) {
+    //         return props.follow(u.id)
+    //     } else {
+    //         return <Redirect to={/'login'} />
+    //     } 
+    // }
+    
+
     return (
         <div>
             <Paginator {...props} />
@@ -19,24 +34,20 @@ const Users = (props) => {
                         <NavLink to={'/profile/' + u.id} className={classes.name}>{u.name}</NavLink>
                         <div className={classes.userInfo}>{u.status}</div>
                     </span>
-                    <span className={classes.followButton}>
-                        {u.isFollowed
-                            ? <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
-                                props.unfollow(u.id)
-                            }} className={classes.button} >Unfollow</button>
-                            : <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {
-                                props.follow(u.id)
-                            }} className={classes.button} >Follow</button>}
+                    <span className={classes.followUnfollowButton}>
+                        {u.followed
+                            ? <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {props.unfollow(u.id)
+                            }} className={classes.unfollowButton}>
+                                <span className={classes.unfollowNotOnHover}>Followed</span>
+                                <span className={classes.unfollowOnHover}>Unfollow</span>
+                                </button>
+                            : <button disabled={props.followButtonDisabled.some(id => id === u.id)} onClick={() => {props.follow(u.id)
+                            }} className={classes.followButton}>Follow</button>}
                     </span>
-                    {/* <span>
-                            <div className={classes.userInfo}>{'u.location.city'}</div>
-                            <div className={classes.userInfo}>{'u.location.country'}</div>
-                        </span> */}
                 </div>
             )}
         </div>
     )
 }
-
 
 export default Users;

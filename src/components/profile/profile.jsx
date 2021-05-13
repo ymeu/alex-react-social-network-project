@@ -3,7 +3,6 @@ import classes from './profile.module.css';
 import Preloader from '../common/preloader/preloader';
 import userPhoto from '../../assets/images/user.png';
 import MyPostsContainer from './myPosts/myPostsContainer';
-import ProfileStatusWithHooks from './profileDescription/profileStatusWithHooks';
 import ProfileDescription from './profileDescription/profileDescription';
 import { ProfileDataReduxForm } from './profileDescription/profileDataForm';
 
@@ -31,22 +30,29 @@ const Profile = (props) => {
     )
   }
 
+  const onCancel = (e) => {
+    setEditMode(false);
+  }
+
   return (
-    <div>
+    <div className={classes.page} >
       <div className={classes.profilePage}>
         <div className={classes.profilePhoto}>
           <img src={props.profile.photos.large || userPhoto} />
-          {props.isOwner && editMode && <input type='file' onChange={onMainPhotoSelected} />}
+          {props.isOwner && editMode && <input className={classes.fileUpload} type='file' onChange={onMainPhotoSelected} />}
         </div>
-        <div className={classes.descriptionBlock}>
-          <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
+        <div className={classes.profileInfo}>
           {editMode
-            ? <ProfileDataReduxForm initialValues={props.profile} profile={props.profile} onSubmit={onSubmit} />
+            ? <ProfileDataReduxForm initialValues={props.profile} 
+              profile={props.profile} status={props.status} updateStatus={props.updateStatus}
+              onSubmit={onSubmit} onCancel={onCancel}/>
             : <ProfileDescription
               profile={props.profile}
               isOwner={props.isOwner}
+              status={props.status} updateStatus={props.updateStatus}
               activateEditMode={() => { setEditMode(true) }} />}
         </div>
+        {props.isOwner && !editMode && <div><button className={classes.editButton} onClick={() => { setEditMode(true) }}>Edit page</button></div>}
       </div>
       <MyPostsContainer />
     </div>

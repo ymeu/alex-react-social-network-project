@@ -2,47 +2,50 @@
     display: flex;
     position: relative;
     margin: 10px;
-    
 }
 
 .pages {
   display: flex;
-  padding-left: 43px;
-  
+  padding-left: 43px;  
 }
-
-.prevBtn {
-    position: absolute;
-    left: -4px;
-}
-
 .paginButtons {
     text-align: center;
     font-size: 15px;
     display: inline-block;
-    background-color:floralwhite;
-    border: none;
-    color: darkgreen;
+    /* background-color:white; */
+    /* border: none; */
+    color: rgb(75, 95, 124);
     height: 25px;
     border-radius: 3px;
-    margin-left: 2px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    
+    margin-left: 2px; 
+    cursor: pointer;
 }
 
+.prevBtn {
+    position: absolute;
+    left: 4px;
+}
+.nextBtn {
+    /* position: absolute; */
+    margin-left: 10px;
+}
 .pageNumber {
-    padding: 2px;
+    padding: 1px;
     margin-left: 60px;
-    width: 10px;
-    border-radius: 3px;
-    background-color: darkgreen;
-    color: floralwhite;
-    min-width: 28px;
+    width: 5px;
+    background-color: white;
+    color: rgb(75, 95, 124);
+    min-width: 25px;
     margin: 0 2px 0 2px;
     display: block;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.pageNumber:hover {
+    color: rgb(46, 150, 235);
 }
 .selectedPage {
-    font-weight: bold;
-    color: white;
+    font-weight: 700px;
+    color: rgb(46, 150, 235);
+    background-color: white;
+    border: 1px solid rgb(46, 150, 235);
 }

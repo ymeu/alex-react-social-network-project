@@ -11,20 +11,17 @@
     margin-bottom: 10px;
 }
 
-.active {
-    color: rgb(205, 0, 0);
-}
-
-.messages {
-    padding: 20px;
-}
-
 .textarea {
     margin-top: 190px;
     width: 500px;
     height: 20px;
+    border-radius: 4px;
 }
 
 .sendButton {
-    margin-left: 400px;
+    margin-top: 5px;
+    margin-left: 403px;
+}
+.messages p {
+    margin-left: 0;
 }

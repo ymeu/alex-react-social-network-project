@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { withAuthRedirect } from '../HOC/withAuthRedirect';
 import { compose } from 'redux';
 
-
 let mapStateToProps = (state) => {
     return {
         messagesPage: state.messagesPage

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { login } from '../../redux/authReducer';
 import { Redirect } from 'react-router-dom';
 import { LoginReduxForm } from './loginForm';
+import classes from './login.module.css';
 
 const Login = (props) => {
     
@@ -15,7 +16,7 @@ const Login = (props) => {
     } 
 
     return (
-        <div>
+        <div className={classes.loginBlock}>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
         </div>

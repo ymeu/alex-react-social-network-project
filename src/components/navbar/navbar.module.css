@@ -1,19 +1,29 @@
 .nav {
-  grid-area: n;
-  background-color: green;
+  /* grid-area: n; */
+  /* margin-left: auto; */
+  background-color: rgb(231, 239, 248);
   padding: 20px;
+  min-height: 700px;
 }
 .item {
-  margin-bottom: 5px;
-  font-size: large;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  /* padding: 10px; */
 }
 .item a {
-  color: white;
-  margin: 10px;
+  display: block;
+  padding: 5px;
+  color: rgb(75, 95, 124);
+  margin: 0;
   text-decoration: none;
 }
 .item a.activeLink {
-  color: rgb(150, 230, 150);
+  display: block;
+  padding: px;
+  color: rgb(231, 239, 248);
+  background-color: rgb(75, 95, 124);
+  border-radius: 3px;
 }
 .friends {
   font-size: x-large;

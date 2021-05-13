@@ -1,18 +1,10 @@
 
 .postsBlock {
   margin: 10px;
-  color: darkgreen;
+  margin-left: 20px;
+  color: rgb(75, 95, 124);
 }
 
 .button {
   margin-top: 5px;
 }
-
-/* .posts {
-  margin-top: 10px;
-} */
-
-
-/* .textarea {
-  margin-top: 10px;
-} */

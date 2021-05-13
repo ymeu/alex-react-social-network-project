@@ -1,7 +1,8 @@
 
 .profilePage {
   display: grid;
-  grid-template-columns: 4fr 6fr;
+  /* grid-template-columns: 3fr 5fr 6fr; */
+  grid-template-columns: 3fr 4fr 2fr;
 }
 .subtitle {
   font-weight: bold;
@@ -12,19 +13,103 @@
   height: 120px;
 }
 .profilePhoto {
- margin-top: 3px;
- margin-left: 5px;
+ margin-top: 20px;
+ margin-left: 20px;
 }
-.descriptionBlock {
-  margin: 10px;
-  color: darkgreen;
+.fileUpload {
+  border: none;
+}
+.profilePhoto img {
+  border-radius: 3px;
+}
+.profileInfo {
+  margin: 14px;
+  color: rgb(75, 95, 124);
 }
 .name {
   font-size: x-large;
   font-weight: bold;
-  color: black;
+  color: rgb(75, 95, 124);
 }
 .textarea {
   width: 300px;
   height: 20px;
 }
+.status {
+  color: black;
+  margin-top: 5px;
+}
+.descriptionBlock {
+  margin-top: 35px;
+}
+.descriptionBlock p {
+  margin-left: 0;
+}
+.descriptionBlock b {
+  font-weight: 500;
+  color: rgb(160, 158, 158);
+}
+.descriptionBlock span {
+  margin-right: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+.editButton {
+  margin-top: 20px;
+  background-color: rgb(160, 158, 158);
+  cursor: pointer;
+}
+.editProfileForm {
+  display: flex;
+  position: relative;
+}
+.editProfile div {
+  margin-top: 5px;
+}
+.editContacts ul {
+  padding-left: 0;
+}
+.cancelButton {
+  margin: 5px;
+  position: absolute;
+  margin-left: 460px;
+  
+}
+.saveButton {
+  margin: 5px;
+  position: absolute;
+  margin-left: 380px;
+  cursor: pointer;
+}
+.cancelButton button {
+  background-color: rgb(160, 158, 158);
+  cursor: pointer;
+}
+
+/* Collapsible 1 */
+
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+

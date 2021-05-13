@@ -3,6 +3,9 @@
     width: 10%;
     margin: 5px;
 }
+.userPhoto:hover ~ .name {
+    color: rgb(46, 150, 235);
+}
 .description {
     position: absolute;
     margin-left: 5px;
@@ -10,16 +13,37 @@
 .name {
     font-weight: 600;
     font-size: large;
+    text-decoration: none;
+    color: rgb(75, 95, 124);
+}
+.name:hover {
+    color: rgb(46, 150, 235);
 }
 
-.followButton {
+.followUnfollowButton {
     position: absolute;
     left: 1060px;
 }
 
-.button {
+.followButton {
     margin: 5px;
 }
+.followButton:hover {
+    border: 1px solid rgb(75, 95, 124);
+    background-color: white;
+    color: rgb(75, 95, 124);
+    cursor: pointer;
+}
+.unfollowButton {
+    margin: 5px;
+    border: 1px solid rgb(75, 95, 124);
+    background-color: white;
+    color: rgb(75, 95, 124);   
+}
+.unfollowButton .unfollowOnHover { display: none; cursor: pointer; }
+.unfollowButton:hover .unfollowNotOnHover { display: none; }
+.unfollowButton:hover .unfollowOnHover { display: inline; }
+
 .userInfo {
     margin-top: 25px;
 }
@@ -27,4 +51,16 @@
 .userProfileContainer {
     margin-left: 50px;
     margin-top: 20px;
+}
+.followPreloader {
+    height: 1px;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  pointer-events:none;
 }

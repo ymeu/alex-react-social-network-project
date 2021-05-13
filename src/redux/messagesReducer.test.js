@@ -2,9 +2,11 @@ import messagesReducer, { sendMessageCreator, deleteMessage } from './messagesRe
 
 let state = {
     messages: [
-        { id: '1', message: 'Hey, how are you?' },
-        { id: '2', message: 'Are you coming today?' },
-        { id: '3', message: 'Can you send me the documents we talked about pls? I will need them tomorrow' }
+        { id: '1', message: 'Hey, welcome to the messages page!' },
+        { id: '2', message: 'A lot of new features are coming soon here' },
+        { id: '3', message: 'At the moment you can send your message' },
+        { id: '4', message: 'At the moment you can send your message' },
+        { id: '4', message: 'You can`t send an empty message or a message exceeding 30 characters though' }
     ]
 };
 

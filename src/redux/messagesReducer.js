@@ -5,16 +5,15 @@ const DELETE_MESSAGE = 'DELETE_MESSAGE';
 
 let initialState = {
     dialogs: [
-        { id: '1', name: 'Alexey' },
-        { id: '2', name: 'Natalie' },
-        { id: '3', name: 'Boris' },
-        { id: '4', name: 'Anna' },
-        { id: '5', name: 'Tanya' }
+        { id: '1', name: 'Alexey' }
+        // { id: '2', name: 'Kate' },
+        // { id: '3', name: 'Boris' }
     ],
     messages: [
-        { id: '1', message: 'Hey, how are you?' },
-        { id: '2', message: 'Are you coming today?' },
-        { id: '3', message: 'Can you send me the documents we talked about pls? I will need them tomorrow' }
+        { id: '1', message: 'Hey, welcome to the messages page!' },
+        { id: '2', message: 'A lot of new features are coming soon here' },
+        { id: '3', message: 'At the moment you can only send your message' },
+        { id: '4', message: 'You can`t send an empty message or a message exceeding 30 characters' }
     ]
 };
 
