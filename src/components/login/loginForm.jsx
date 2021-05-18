@@ -4,7 +4,6 @@ import { Input } from '../common/formsControls/formsControls';
 import { required } from '../../utilities/validators/validators';
 import classes from './../common/formsControls/formsControls.module.css';
 import loginClasses from './login.module.css';
-import { login } from '../../redux/authReducer';
 
 const LoginForm = (props) => {
     return (

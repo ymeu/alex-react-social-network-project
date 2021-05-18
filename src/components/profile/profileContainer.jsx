@@ -34,13 +34,15 @@ class ProfileContainer extends React.Component {
                          updateStatus={this.props.updateStatus}
                          isOwner={!this.props.match.params.userId}
                          savePhoto={this.props.savePhoto}
-                         saveProfile={this.props.saveProfile} />}
+                         saveProfile={this.props.saveProfile}
+                         isFetching={this.props.isFetching} />}
 }
 
 let mapStateToProps = (state) => ({ 
     profile: state.profilePage.profile,
     status: state.profilePage.status,
-    authorisedUserID: state.auth.userID
+    authorisedUserID: state.auth.userID,
+    isFetching: state.profilePage.isFetching
 })
 
 export default compose(

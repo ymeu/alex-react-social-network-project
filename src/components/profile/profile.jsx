@@ -11,7 +11,7 @@ const Profile = (props) => {
 
   let [editMode, setEditMode] = useState(false);
 
-  if (!props.profile) {
+  if (!props.profile || props.isFetching) {
     return <Preloader />
   }
 
@@ -39,13 +39,21 @@ const Profile = (props) => {
       <div className={classes.profilePage}>
         <div className={classes.profilePhoto}>
           <img src={props.profile.photos.large || userPhoto} />
-          {props.isOwner && editMode && <input className={classes.fileUpload} type='file' onChange={onMainPhotoSelected} />}
+          {props.isOwner &&
+            <div>
+              <label for="file-upload" className={classes.fileUpload}>
+                Upload new photo
+              </label>
+              <input type='file' onChange={onMainPhotoSelected} id="file-upload" />
+            </div>}
+            {/* <input className={classes.fileUpload} type='file' onChange={onMainPhotoSelected} />} */}
+
         </div>
         <div className={classes.profileInfo}>
           {editMode
-            ? <ProfileDataReduxForm initialValues={props.profile} 
+            ? <ProfileDataReduxForm initialValues={props.profile}
               profile={props.profile} status={props.status} updateStatus={props.updateStatus}
-              onSubmit={onSubmit} onCancel={onCancel}/>
+              onSubmit={onSubmit} onCancel={onCancel} />
             : <ProfileDescription
               profile={props.profile}
               isOwner={props.isOwner}
@@ -54,7 +62,7 @@ const Profile = (props) => {
         </div>
         {props.isOwner && !editMode && <div><button className={classes.editButton} onClick={() => { setEditMode(true) }}>Edit page</button></div>}
       </div>
-      <MyPostsContainer />
+      {props.isOwner && <MyPostsContainer />}
     </div>
   );
 }

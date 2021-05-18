@@ -19,6 +19,10 @@ const Login = (props) => {
         <div className={classes.loginBlock}>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
+            <div className={classes.loginDetails}>
+                <p><b>Email:</b> free@samuraijs.com</p>
+                <p><b>Password:</b> free</p> 
+            </div>
         </div>
     )
 }

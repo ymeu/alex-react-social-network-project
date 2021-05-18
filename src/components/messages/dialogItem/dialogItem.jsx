@@ -6,7 +6,7 @@ const DialogItem = (props) => {
 
     return (
         <div className={classes.dialog}>
-            <NavLink to={'/profile/:userId?'}>{props.name}</NavLink>
+            <NavLink to={'/profile'}>{props.name}</NavLink>
         </div>
     );
 }

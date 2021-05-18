@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './users.module.css';
 import userPhoto from '../../assets/images/user.png';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Paginator from '../common/paginator/paginator';
 import Preloader from '../common/preloader/preloader';
 
@@ -10,15 +10,6 @@ const Users = (props) => {
     if (props.isFetching) {
         return <Preloader />
     }
-
-    // let followUnfollowRedirect = (u) => {
-    //     if (props.isAuth) {
-    //         return props.follow(u.id)
-    //     } else {
-    //         return <Redirect to={/'login'} />
-    //     } 
-    // }
-    
 
     return (
         <div>

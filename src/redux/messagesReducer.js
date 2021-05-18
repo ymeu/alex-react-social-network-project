@@ -11,9 +11,9 @@ let initialState = {
     ],
     messages: [
         { id: '1', message: 'Hey, welcome to the messages page!' },
-        { id: '2', message: 'A lot of new features are coming soon here' },
-        { id: '3', message: 'At the moment you can only send your message' },
-        { id: '4', message: 'You can`t send an empty message or a message exceeding 30 characters' }
+        { id: '2', message: 'A lot of new features are coming here soon. At the moment you can only send your message. New messages get erased after a page reload, so you can send them as many as you want.' },
+        { id: '3', message: 'You can`t send an empty message or a message exceeding 30 characters.' },
+        { id: '4', message: 'Check the users page out! Look at the profiles of other users. When you follow or unfollow different users, it is saved on server, so you always keep a track of the users you follow.' }
     ]
 };
 

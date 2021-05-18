@@ -11,7 +11,7 @@ import { withAuthRedirect } from '../HOC/withAuthRedirect';
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+       this.props.requestUsers(this.props.currentPage, this.props.pageSize);
     }
 
     onPageChanged = (pageNumber) => {
@@ -25,9 +25,7 @@ class UsersContainer extends React.Component {
             return <Preloader />
           }
 
-        return <>
-            {/* {this.props.isFetching ? <Preloader /> : null} */}
-            <Users 
+        return <Users 
                 users = {this.props.users}    
                 totalItemsCount = {this.props.totalUsersCount}
                 pageSize = {this.props.pageSize}
@@ -40,7 +38,6 @@ class UsersContainer extends React.Component {
                 isFetching = {this.props.isFetching}
                 isAuth={this.props.isAuth}
         />
-    </>
     }
 
 }

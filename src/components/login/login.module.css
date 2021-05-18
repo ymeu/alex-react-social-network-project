@@ -22,3 +22,17 @@ h1 {
     margin-left: 0;
     display: inline;
 }
+.loginDetails {
+    background-color: #eee;
+    /* color: #444; */
+    color: rgb(105, 103, 103);
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    border: 1px solid grey;
+    border-radius: 2px;
+    width: 300px;
+}
+b {
+    font-weight: 600;
+}

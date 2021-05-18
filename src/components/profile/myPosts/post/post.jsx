@@ -1,15 +1,17 @@
 import React from 'react';
-import classes from './post.module.css';
+import classes from './../myPosts.module.css';
 import { NavLink } from 'react-router-dom';
 
 const Post = (props) => {
   return (
-    <div className={`${classes.item} ${classes.post}`}>
-      <NavLink to={'/profile/:userId?'}>
-        <img className = {classes.ava} src = {props.profilePhoto}/> 
-      </NavLink>
-      <p>{props.message}</p>  
-      <div className = {classes.likesCounter}>{props.likes} Likes</div>
+    <div className={classes.post}>
+      <div className={classes.textAndAva}>
+        <NavLink to={'/profile/:userId?'}>
+          <img className = {classes.ava} src = {props.profilePhoto}/> 
+        </NavLink>
+        <div className = {classes.likesCounter}>{props.likes} Likes</div>
+      </div>
+      <p>{props.message}</p> 
     </div>
   );
 }

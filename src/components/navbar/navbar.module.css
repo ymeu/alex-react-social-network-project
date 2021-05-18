@@ -1,10 +1,11 @@
 .nav {
-  /* grid-area: n; */
-  /* margin-left: auto; */
   background-color: rgb(231, 239, 248);
   padding: 20px;
   min-height: 700px;
 }
+/* .itemBlock {
+  width: 150px;
+} */
 .item {
   margin: 0;
   padding: 0;
