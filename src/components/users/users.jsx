@@ -16,7 +16,7 @@ const Users = (props) => {
             <Paginator {...props} />
             {props.users.map(u =>
                 <div key={u.id} className={classes.userProfileContainer}>
-                    <span>
+                    <span className={classes.userPhotoContainer}>
                         <NavLink to={'/profile/' + u.id}>
                             <img src={u.photos.small != null ? u.photos.small : userPhoto} className={classes.userPhoto} />
                         </NavLink>

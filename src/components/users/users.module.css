@@ -19,6 +19,9 @@
 .name:hover {
     color: rgb(46, 150, 235);
 }
+.userPhotoContainer:hover + .description .name {
+    color: rgb(46, 150, 235);
+}
 
 .followUnfollowButton {
     position: absolute;

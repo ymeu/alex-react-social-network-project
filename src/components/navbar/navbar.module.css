@@ -21,7 +21,6 @@
 }
 .item a.activeLink {
   display: block;
-  padding: px;
   color: rgb(231, 239, 248);
   background-color: rgb(75, 95, 124);
   border-radius: 3px;
