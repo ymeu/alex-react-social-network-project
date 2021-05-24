@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0aea6e87bfb97f84b934e57befdcecac",
+    "revision": "84486e0df0ec17e3547ce64486549317",
     "url": "/alex-react-social-network-project/index.html"
   },
   {
-    "revision": "26f60184c3492f57c285",
-    "url": "/alex-react-social-network-project/static/css/main.15844fce.chunk.css"
+    "revision": "ba69d2bcba13346e8f20",
+    "url": "/alex-react-social-network-project/static/css/main.a1cd7019.chunk.css"
   },
   {
-    "revision": "cf1ddc8801368c88457a",
-    "url": "/alex-react-social-network-project/static/js/2.a7d11006.chunk.js"
+    "revision": "88d62e42348962a5fbf0",
+    "url": "/alex-react-social-network-project/static/js/2.01c4adc2.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/alex-react-social-network-project/static/js/2.a7d11006.chunk.js.LICENSE.txt"
+    "url": "/alex-react-social-network-project/static/js/2.01c4adc2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "26f60184c3492f57c285",
-    "url": "/alex-react-social-network-project/static/js/main.5226e6d3.chunk.js"
+    "revision": "ba69d2bcba13346e8f20",
+    "url": "/alex-react-social-network-project/static/js/main.ec0b14e7.chunk.js"
   },
   {
     "revision": "7c83866df140bf3cc70d",
