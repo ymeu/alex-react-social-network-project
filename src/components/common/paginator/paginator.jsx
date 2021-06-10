@@ -27,6 +27,15 @@ const Paginator = (props) => {
                     <path d="M292.64,116.8l-128,128c-6.204,6.241-6.204,16.319,0,22.56l128,128l22.56-22.72L198.56,256L315.2,139.36L292.64,116.8z"
                     />
                 </svg>}
+                {/* {portionNumber <= 1 && 
+                    <svg className={`${classes.disabled} ${classes.paginButtons}`} disabled
+                    viewBox="0 0 512 512">
+                    <path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M256,480
+                       C132.288,480,32,379.712,32,256S132.288,32,256,32s224,100.288,224,224S379.712,480,256,480z" />
+                    <path d="M292.64,116.8l-128,128c-6.204,6.241-6.204,16.319,0,22.56l128,128l22.56-22.72L198.56,256L315.2,139.36L292.64,116.8z"
+                    />
+                </svg>
+                } */}
             <div className={classes.pages}>
                 {pages
                     .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)

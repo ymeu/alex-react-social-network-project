@@ -29,6 +29,14 @@
     /* position: absolute; */
     margin-left: 10px;
 }
+/* .disabled {
+    fill: rgb(163, 160, 160);
+    background-color: rgb(231, 229, 229);
+    border-radius: 15px;
+    margin-right: 0;
+    padding-right: 0;
+} */
+
 .pageNumber {
     padding: 1px;
     margin-left: 60px;
@@ -48,6 +56,9 @@
     color: rgb(46, 150, 235);
     background-color: white;
     border: 1px solid rgb(46, 150, 235);
+    border-radius: 15px;
+    /* text-align: center; */
+    
 }
 .paginButtons:hover {
     fill: rgb(46, 150, 235);

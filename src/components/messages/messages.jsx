@@ -16,6 +16,7 @@ const Messages = (props) => {
     
     let addNewMessage = (values) => {
         props.sendMessage(values.newMessageBody);
+        values.newMessageBody = '';
     }
 
     return (
