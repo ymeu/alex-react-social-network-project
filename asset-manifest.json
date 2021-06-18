@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/alex-react-social-network-project/static/css/main.a1cd7019.chunk.css",
-    "main.js": "/alex-react-social-network-project/static/js/main.ec0b14e7.chunk.js",
-    "main.js.map": "/alex-react-social-network-project/static/js/main.ec0b14e7.chunk.js.map",
+    "main.css": "/alex-react-social-network-project/static/css/main.2297bed2.chunk.css",
+    "main.js": "/alex-react-social-network-project/static/js/main.44ed8854.chunk.js",
+    "main.js.map": "/alex-react-social-network-project/static/js/main.44ed8854.chunk.js.map",
     "runtime-main.js": "/alex-react-social-network-project/static/js/runtime-main.c61f544b.js",
     "runtime-main.js.map": "/alex-react-social-network-project/static/js/runtime-main.c61f544b.js.map",
     "static/js/2.01c4adc2.chunk.js": "/alex-react-social-network-project/static/js/2.01c4adc2.chunk.js",
     "static/js/2.01c4adc2.chunk.js.map": "/alex-react-social-network-project/static/js/2.01c4adc2.chunk.js.map",
     "index.html": "/alex-react-social-network-project/index.html",
-    "precache-manifest.5089b8faeca3db407e67d4cba9930141.js": "/alex-react-social-network-project/precache-manifest.5089b8faeca3db407e67d4cba9930141.js",
+    "precache-manifest.3cb0fe59818e285ad2b0084eaa770de5.js": "/alex-react-social-network-project/precache-manifest.3cb0fe59818e285ad2b0084eaa770de5.js",
     "service-worker.js": "/alex-react-social-network-project/service-worker.js",
-    "static/css/main.a1cd7019.chunk.css.map": "/alex-react-social-network-project/static/css/main.a1cd7019.chunk.css.map",
+    "static/css/main.2297bed2.chunk.css.map": "/alex-react-social-network-project/static/css/main.2297bed2.chunk.css.map",
     "static/js/2.01c4adc2.chunk.js.LICENSE.txt": "/alex-react-social-network-project/static/js/2.01c4adc2.chunk.js.LICENSE.txt",
     "static/media/preloader.svg": "/alex-react-social-network-project/static/media/preloader.c3d168f8.svg",
     "static/media/react-logo.png": "/alex-react-social-network-project/static/media/react-logo.d5e08cd1.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.c61f544b.js",
     "static/js/2.01c4adc2.chunk.js",
-    "static/css/main.a1cd7019.chunk.css",
-    "static/js/main.ec0b14e7.chunk.js"
+    "static/css/main.2297bed2.chunk.css",
+    "static/js/main.44ed8854.chunk.js"
   ]
 }
